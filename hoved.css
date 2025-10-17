@@ -89,7 +89,7 @@ h3 {
     font-family: 'Abril Fatface', sans-serif;
 }
 
-h4 {
+h4:not(.video-overlay) {
     font-family: 'Works Sans', sans-serif;
     color: rgb(0, 0, 0);
     font-size: 1.5rem;
@@ -106,7 +106,8 @@ h4 {
 }
 
 .grid-item {
-  width: 600px;
+  width: 100%;
+  max-width: 600px;
   height: 400px;
   position: relative;
 }
@@ -116,9 +117,9 @@ h4 {
   height: 100%;
   object-fit: cover;
   position: relative;
-  border-radius: 15px;;
+  border-radius: 15px;
   filter: none;
-    transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .grid-item img:hover {
@@ -147,28 +148,52 @@ h4 {
     text-align: center;
 }
 
+.video-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    margin-bottom: 30px;
+}
+
 .video-container {
     position: relative;
-    width: 100%;
+    width: 80vw;
+    max-width: 800px;
     height: 500px;
-    overflow: hidden;
+    margin: 0 auto;
 }
 
 .video-container video {
     width: 100%;
-    height: 500px;
+    height: 100%;
     object-fit: cover;
-    filter: brightness(80%) blur(2px);
+    display: block;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    background: rgba(0,0,0,0.5);
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 1.5rem;
+    text-align: center;
+    width: 80%;
+    pointer-events: none;
 }
 
 footer {
     background-color: rgb(212, 155, 136);
-    text-align: left;
+    text-align: center;
     padding: 10px;
-    position: relative;
-    bottom: 0;
     width: 100%;
     color: black;
+    box-sizing: border-box;
 }
 .nav a {
     color: black;
@@ -189,4 +214,22 @@ footer {
     .grid-item img {
         height: auto;
     }
+}
+.video-bg {
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    position: relative;
+    margin: 0;
+    left: 50%;
+    right: 50%;
+    transform: translateX(-50%);
+}
+
+.video-bg video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: blur(2px) brightness(70%);
 }
