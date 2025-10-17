@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Florida Travels</title>
+    <link rel="stylesheet" href="hoved.css"/>
+</head>
+<body>
+    <header>
+        <a href="hoved.html"><h1>Florida Travels</h1></a>
+    </header>
+    <div class="nav">
+        <a href="hoved.html">Home</a>
+        <a href="experiences.html">Experiences</a>
+        <a href="history.html">History</a>
+    </div>
+    <!-- Stretching background video -->
+    <div class="video-bg">
+        <video autoplay muted loop id="myVideo">
+            <source src="Floridavideo.mp4" type="video/mp4" alt="Florida Video">
+        </video>
+    </div>
+    <main>
+        <h2>Welcome to Florida Travels</h2>
+        <h3>Cities</h3>
+        <div class="grid-container">
+            <div class="grid-item">
+                <a href="side.html"><img src="https://www.worldatlas.com/upload/df/29/12/shutterstock-490898872.jpg" alt="Miami Picture" width="300" height="200">
+                <div class="cityname">Miami</div>
+                </a>
+            </div>
+            <div class="grid-item">
+                <a href="orlando.html"><img src="https://cdn.britannica.com/07/201607-050-0B5774CB/Orlando-Florida-aerial-cityscape-towards-Eola-Lake.jpg" alt="Orlando Picture" width="300" height="200">
+                <div class="cityname">Orlando</div>
+                </a>
+            </div>
+            <div class="grid-item">
+                <a href="tampa.html"><img src="https://floridatravelpod.com/wp-content/uploads/2023/02/down-town-tampa-skyline-stockpack-unsplash-scaled.jpg" alt="Tampa Picture" width="300" height="200">
+                <div class="cityname">Tampa</div>
+                </a>
+            </div>
+            <div class="grid-item">
+                <a href="jacksonville.html"><img src="https://i.natgeofe.com/n/6a3ba020-de8d-47ce-ac43-627f2af6a15a/Downtown-Jacksonville-Rich-Estrada.jpg?w=1440&h=960" alt="Jacksonville Picture" width="300" height="200">
+                <div class="cityname">Jacksonville</div>
+                </a>
+            </div>
+        </div>
+        <div class="video-section">
+            <div class="video-container">
+                <video id="Floridavideo" controls>
+                    <source src="floridainfovid.mp4" type="video/mp4" alt="Florida information video">
+                </video>
+                <h4 class="video-overlay">Click on the video to learn more about each city and the state!</h4>
+                <button onclick="toggleFullScreen()">Full Screen</button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>© 2025 Florida Travels. All rights reserved.</p>
+        <p>Contact us: info@floridatravels.com</p>
+        <p>Call us: +1 (555) 123-4567</p>
+    </footer>
+    <script>
+    const video = document.getElementById('Floridavideo');
+    video.onclick = function() {
+        if (video.paused) {
+            video.play();
+        } else {
+            video.pause();
+        }
+    };
+    function toggleFullScreen() {
+        if (video.requestFullscreen) {
+            video.requestFullscreen();
+        } else if (video.webkitRequestFullscreen) {
+            video.webkitRequestFullscreen();
+        } else if (video.msRequestFullscreen) {
+            video.msRequestFullscreen();
+        }
+    }
+    </script>
+</body>
+</html>
